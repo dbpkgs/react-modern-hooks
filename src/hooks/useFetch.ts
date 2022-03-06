@@ -7,6 +7,12 @@ import { Options } from '../types';
  *
  * @param {string} url - The API endpoint to fetch data from
  * @param {Options} options - optional parameters allowed to be passed when fetching data from an endpoint
+ *
+ * @returns {T|null}  data - returned data from the api endpoint
+ * @returns {unknown} error - Error response returned incase something goes wrong during data fetching
+ * @returns {boolean} loading - Loading state returned when data is still loading from the API endpoint
+ * @returns {Function} refetch - Refetch function to refetch data
+ *
  */
 const useFetch = <T = any>(url: string, options?: Options) => {
   const [data, setData] = useState<T | null>(null);
