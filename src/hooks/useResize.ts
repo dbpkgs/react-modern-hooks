@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * useResize - Hook to handle page resizing
+ *
+ * @returns {number} width - The width of the window when screen is resized
+ * @returns {number}  height - The height of the window when screen is resized
+ */
 const useResize = () => {
   const [width, setWidth] = useState<number>(1440);
   const [height, setHeight] = useState<number>(960);
