@@ -1,12 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * @param {function} useSearch  - is a function which acts as a delayed search every time a user types,
- * it receives an initial state as first parameter and timeout as second parameter.
- * The timeout is the duration period to search after when a user is typing.
- * Everytime a user is typing the callback to search is cancelled and only when a user stops typing then
- * the callback for search will be made after the duration specified. Default value is @value 500
- * Function is used in same manner as the @param setState in class based functions
+ * @param {function} useSearch  - Hook to allow delayed search
  *
  * @param {T} initialState  - is the initial state when setting the state which is of generic type T
  * @param {number} timeout - is the duration to perform search after, default @value 500
