@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import { OS, OSResponse } from '../types';
 
+/**
+ * useOs - Hook to get the current OS of the userAgent
+ *
+ * @returns {OSResponse} os - The current os of the userAgent
+ */
 const useOs = (): OSResponse => {
   const [os, setOs] = useState<OS>(null);
   const userAgent = window.navigator.userAgent;
