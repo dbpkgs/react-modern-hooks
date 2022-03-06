@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { processImage } from '../utils';
 
+/**
+ * useImageDownload - Hook to download images
+ *
+ * @returns {unknown} error - Error message returned during image download
+ * @returns {boolean} loading - Loading state when image is still being downloaded
+ * @return {Function} downloadImage - Download image function to allow downloading images from the endpoint
+ *
+ */
 const useImageDownload = () => {
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(false);
