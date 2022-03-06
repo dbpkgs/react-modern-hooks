@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 const usePageTitle = (title: string): void => {
   useEffect(() => {
     if (document && typeof document !== 'undefined') {
-      document.title = title
+      document.title = title;
     }
-  }, [title])
-}
+  }, [title]);
+};
 
-export default usePageTitle
+export default usePageTitle;

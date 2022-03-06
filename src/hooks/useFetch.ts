@@ -1,38 +1,38 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { Options } from '../types'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Options } from '../types';
 
 const useFetch = <T = any>(url: string, options?: Options) => {
-  const [data, setData] = useState<T | null>(null)
-  const [error, setError] = useState<unknown>(null)
-  const [loading, setLoading] = useState<boolean>(false)
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<unknown>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleFetch = async (): Promise<void> => {
     try {
-      setLoading(true)
-      const response = await axios.get(url, options)
-      setData(response.data)
-      setLoading(false)
+      setLoading(true);
+      const response = await axios.get(url, options);
+      setData(response.data);
+      setLoading(false);
     } catch (err) {
-      setLoading(false)
-      setError(err)
+      setLoading(false);
+      setError(err);
     }
-  }
+  };
 
   const refetch = () => {
-    handleFetch()
-  }
+    handleFetch();
+  };
 
   useEffect(() => {
-    handleFetch()
-  }, [url])
+    handleFetch();
+  }, [url]);
 
   return {
     data,
     loading,
     error,
-    refetch
-  }
-}
+    refetch,
+  };
+};
 
-export default useFetch
+export default useFetch;

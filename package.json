@@ -12,9 +12,9 @@
   "scripts": {
     "build": "yarn lint && rimraf ./lib && tsc",
     "check:type": "tsc --project tsconfig.json",
-    "check:format": "prettier --check '**/*.{js,json,md,ts,tsx,yaml,yml}'  --ignore-path ./.prettierignore",
+    "check:format": "prettier --check '**/*.{js,json,md,ts,yaml,yml}'  --ignore-path ./.prettierignore",
     "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
-    "format": "prettier --write '**/*.{js,json,md,ts,tsx,yaml,yml,sh,graphql}'",
+    "format": "prettier --write '**/*.{js,json,md,ts,yaml,yml}'",
     "prepare": "yarn build",
     "prepublishOnly": "yarn check:type && yarn lint && yarn test",
     "postversion": "git push && git push --tags",

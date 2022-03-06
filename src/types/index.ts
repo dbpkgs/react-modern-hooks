@@ -1,9 +1,9 @@
 export type Options = {
-  headers?: Record<string, string | number | boolean>
-}
+  headers?: Record<string, string | number | boolean>;
+};
 
-export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null
+export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null;
 
 export type OSResponse = {
-  os: OS
-}
+  os: OS;
+};

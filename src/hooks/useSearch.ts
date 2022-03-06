@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * @param {function} useSearch  - is a function which acts as a delayed search every time a user types,
@@ -16,52 +16,43 @@ import { useEffect, useRef, useState } from 'react'
  */
 const useSearch = <T>(
   initialState: T,
-  timeout?: number
-): [
-  state: T,
-  setState: (
-    updatedState: React.SetStateAction<T>,
-    callback?: (updatedState: T) => void
-  ) => void
-] => {
+  timeout?: number,
+): [state: T, setState: (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => void] => {
   /**
    * On load of the function the provided state is set as the initial function state
    * @param {React.MutableRefObject<((updated: T) => void) | undefined>} callbackRef - is a reference
    * variable which we use to trigger the callback function call
    */
-  const [state, setState] = useState<T>(initialState)
-  const callbackRef = useRef<(updated: T) => void>()
+  const [state, setState] = useState<T>(initialState);
+  const callbackRef = useRef<(updated: T) => void>();
 
   /**
    * Here @param {function } handleState runs the provided callback function which is optionally passed
    * after the state has been updated
    */
-  const handleSetState = (
-    updatedState: React.SetStateAction<T>,
-    callback?: (updatedState: T) => void
-  ) => {
-    callbackRef.current = callback
-    setState(updatedState)
-  }
+  const handleSetState = (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => {
+    callbackRef.current = callback;
+    setState(updatedState);
+  };
 
   /**
    *
    * useEffect here is triggered everytime there is a state update, but after the specified duration to perform delayed call to the
    * callback function that can therefore be used to perform search
    *
-   * */
+   */
   useEffect(() => {
     if (typeof callbackRef.current === 'function') {
       const timeOutId = setTimeout(() => {
-        callbackRef.current?.(state)
-        callbackRef.current = undefined
-      }, timeout || 500) // If no timeout period is provided, use 500 as the default value
+        callbackRef.current?.(state);
+        callbackRef.current = undefined;
+      }, timeout || 500); // If no timeout period is provided, use 500 as the default value
 
-      return () => clearTimeout(timeOutId)
+      return () => clearTimeout(timeOutId);
     }
-  }, [state])
+  }, [state]);
 
-  return [state, handleSetState]
-}
+  return [state, handleSetState];
+};
 
-export default useSearch
+export default useSearch;
