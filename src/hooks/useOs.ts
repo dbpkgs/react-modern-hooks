@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { OS } from '../types'
+import { OS, OSResponse } from '../types'
 
-const useOs = (): { os: OS } => {
+const useOs = (): OSResponse => {
   const [os, setOs] = useState<OS>(null)
   const userAgent = window.navigator.userAgent
   const platform = window.navigator.platform
