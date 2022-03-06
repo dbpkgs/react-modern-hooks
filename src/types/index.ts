@@ -1,5 +1,5 @@
-import { AxiosRequestConfig } from 'axios'
-
 export type Options = {
   headers?: Record<string, string | number | boolean>
 }
+
+export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null
