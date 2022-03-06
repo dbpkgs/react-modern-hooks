@@ -1,0 +1,41 @@
+{
+  "name": "react-modern-hooks",
+  "version": "1.0.0",
+  "description": "A react modern hooks library for customized and reusable hooks",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "dbpkgs",
+  "license": "MIT",
+  "engines": {
+    "node": "~14.17.1"
+  },
+  "scripts": {
+    "build": "yarn lint && rimraf ./lib && tsc",
+    "check:type": "tsc --project tsconfig.json",
+    "check:format": "prettier --check '**/*.{js,json,md,ts,tsx,yaml,yml}'  --ignore-path ./.prettierignore",
+    "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
+    "format": "prettier --write '**/*.{js,json,md,ts,tsx,yaml,yml,sh,graphql}'",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn check:type && yarn lint && yarn test",
+    "postversion": "git push && git push --tags",
+    "lint": "tslint -p tsconfig.json",
+    "lint:fix": "tslint -p tsconfig.json --quiet --fix",
+    "test": "jest --config jestconfig.json",
+    "ts-coverage": "typescript-coverage-report --threshold=86",
+    "version": "yarn run format && git add -A src"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "axios": "^0.26.0",
+    "prettier": "^2.5.1",
+    "react": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "react": "16.8 - 17"
+  }
+}

@@ -1,0 +1,9 @@
+# Third party dependencies
+node_modules
+
+# Out directory
+/lib
+
+#coverage
+coverage
+coverage-ts
