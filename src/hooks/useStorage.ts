@@ -5,6 +5,17 @@ type UseStorageProps<T = any> = {
   storageKey: string;
 };
 
+/**
+ * useStorage - Hook to allow use of localstorage
+ *
+ * @param {React.SetStateAction<T>} setStorageItem - The state setter to control item being set in the storage
+ * @param {string} storageKey - The key to be used when setting the localStorage value(s)
+ *
+ * @returns {Function} updateStorageItem - function to update the stored values in the localstorage
+ * @returns {Function} getStoredItem - function to get the stored item from localstorage
+ * @returns {Function} removeStoredItem - Function to remove stored item from localstorage
+ *
+ */
 const useStorage = ({ setStorageItem, storageKey }: UseStorageProps) => {
   const updateStorageItem = useCallback(
     <T = any>(storageItem: T) => {
