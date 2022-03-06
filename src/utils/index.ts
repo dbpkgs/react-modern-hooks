@@ -6,3 +6,10 @@ export const processImage = (buffer: ArrayBuffer, filename?: string) => {
   document.body.appendChild(link);
   link.click();
 };
+
+export const debounce = (callback: <T = any>(props: T) => any, delay: number) => {
+  let _tId: number = 0;
+  clearTimeout(_tId);
+
+  _tId = setTimeout(callback, delay);
+};

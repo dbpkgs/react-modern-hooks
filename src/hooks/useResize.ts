@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { debounce } from '../utils';
 
 /**
  * useResize - Hook to handle page resizing
@@ -17,8 +18,12 @@ const useResize = () => {
       setHeight(innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const handleDebouncedResize = useCallback(() => {
+      debounce(handleResize, 1000);
+    }, []);
+
+    window.addEventListener('resize', handleDebouncedResize);
+    return () => window.removeEventListener('resize', handleDebouncedResize);
   }, []);
 
   return {
