@@ -1,9 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 
 /**
- * @param {function} useStateCallback  - is a function which acts as a state callback,
- * it receives an initial stateand an optional acllback function which runs after the state update.
- * Function is used in same manner as the @param setState in class based functions
+ * @param {function} useStateCallback  - Hook that acts as a state callback
+ * Functionality borrowed from @param setState in class based functions
  *
  * @param {T} initialState  - is the initial state when setting the state which is of generic type T
  * @param {React.SetStateAction<T>} updatedState - is the updated state
