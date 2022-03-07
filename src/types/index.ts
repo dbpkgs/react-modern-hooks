@@ -2,6 +2,10 @@ export type Options = {
   headers?: Record<string, string | number | boolean>;
 };
 
+export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null;
+
+export type MutableObjectRef = React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>;
+
 export type SearchResponse<T> = [
   state: T,
   setState: (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => void,
@@ -23,13 +27,14 @@ export type ImageDownloadResponse = {
   loading: boolean;
 };
 
-export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null;
+export type FocuResponse = {
+  focused: boolean;
+  setFocus: () => void;
+};
 
 export type OSResponse = {
   os: OS;
 };
-
-export type MutableObjectRef = React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>;
 
 export type OnlineResponse = {
   online: boolean;
