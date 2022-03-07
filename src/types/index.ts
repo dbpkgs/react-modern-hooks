@@ -7,3 +7,5 @@ export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null;
 export type OSResponse = {
   os: OS;
 };
+
+export type MutableObjectRef = React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>;
