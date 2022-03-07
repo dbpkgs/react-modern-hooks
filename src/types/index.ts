@@ -57,6 +57,14 @@ export interface NavigatorInformation extends Navigator {
   webkitConnection?: Navigator['connection'];
 }
 
+export interface INetworkInformation extends NetworkInformation {
+  downlink: number | null;
+  effectiveType: string | null;
+  onchange: any;
+  rtt: number | null;
+  saveData: boolean;
+}
+
 export type NetworkResponse = {
-  connection: NetworkInformation;
+  connection: INetworkInformation;
 };

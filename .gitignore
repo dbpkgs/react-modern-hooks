@@ -3,6 +3,8 @@ node_modules
 
 # Out directory
 /lib
+/dist
+.parcel-cache
 
 #coverage
 coverage

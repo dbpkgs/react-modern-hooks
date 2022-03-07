@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavigatorInformation, NetworkResponse } from '../types';
+import { INetworkInformation, NavigatorInformation, NetworkResponse } from '../types';
 
 /**
  * useNetwork - Hook for getting the network status
@@ -8,8 +8,10 @@ import { NavigatorInformation, NetworkResponse } from '../types';
  */
 const useNetwork = (): NetworkResponse => {
   const navigate: NavigatorInformation = navigator;
-  const networkConnection = navigate.connection || navigate.mozConnection || navigate.webkitConnection;
-  const [connection, setConnection] = useState<NetworkInformation>(networkConnection);
+  //   @ts-expect-error ts-migrate(2739): FIXME: Type 'NetworkInformation' is missing the following properties from type 'INetworkInformation': downlink, effectiveType, onchange, rtt, saveData
+  const networkConnection: INetworkInformation =
+    navigate.connection || navigate.mozConnection || navigate.webkitConnection;
+  const [connection, setConnection] = useState<INetworkInformation>(networkConnection);
 
   const updateConnection = () => {
     setConnection(networkConnection);
