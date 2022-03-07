@@ -9,3 +9,7 @@ export type OSResponse = {
 };
 
 export type MutableObjectRef = React.MutableRefObject<HTMLInputElement | HTMLTextAreaElement | null>;
+
+export type OnlineResponse = {
+  online: boolean;
+};
