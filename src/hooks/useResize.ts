@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { ResizeResponse } from '../types';
 import { debounce } from '../utils';
 
 /**
@@ -7,7 +8,7 @@ import { debounce } from '../utils';
  * @returns {number} width - The width of the window when screen is resized
  * @returns {number}  height - The height of the window when screen is resized
  */
-const useResize = () => {
+const useResize = (): ResizeResponse => {
   const [width, setWidth] = useState<number>(1440);
   const [height, setHeight] = useState<number>(960);
 

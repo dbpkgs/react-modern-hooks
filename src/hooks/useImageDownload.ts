@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ImageDownloadResponse } from '../types';
 import { processImage } from '../utils';
 
 /**
@@ -9,7 +10,7 @@ import { processImage } from '../utils';
  * @return {Function} downloadImage - Download image function to allow downloading images from the endpoint
  *
  */
-const useImageDownload = () => {
+const useImageDownload = (): ImageDownloadResponse => {
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(false);
 

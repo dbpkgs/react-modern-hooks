@@ -12,6 +12,17 @@ export type StateCallbackResponse<T> = [
   setState: (updatedState: React.SetStateAction<T>, callback?: (updatedState: T) => void) => void,
 ];
 
+export type ResizeResponse = {
+  width: number;
+  height: number;
+};
+
+export type ImageDownloadResponse = {
+  downloadImage: (imgUrl: string) => void;
+  error: unknown;
+  loading: boolean;
+};
+
 export type OS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | null;
 
 export type OSResponse = {
