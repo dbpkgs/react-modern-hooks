@@ -9,3 +9,4 @@ export { default as useImageDownload } from './useImageDownload';
 export { default as useFocus } from './useFocus';
 export { default as useDebounce } from './useDebounce';
 export { default as useOnline } from './useOnline';
+export { default as useDeviceDetect } from './useDeviceDetect';

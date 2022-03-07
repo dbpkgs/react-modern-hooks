@@ -46,3 +46,8 @@ export type FetchResponse<T> = {
   error: unknown;
   refetch: () => void;
 };
+
+export type DeviceDetectResponse = {
+  isMobile: boolean;
+  device: string;
+};
