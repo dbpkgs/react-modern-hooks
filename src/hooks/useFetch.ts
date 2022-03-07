@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Options } from '../types';
+import { FetchResponse, Options } from '../types';
 
 /**
  * useFetch - Hook for prefetching data from a API endpoint
@@ -14,7 +14,7 @@ import { Options } from '../types';
  * @returns {Function} refetch - Refetch function to refetch data
  *
  */
-const useFetch = <T = any>(url: string, options?: Options) => {
+const useFetch = <T = any>(url: string, options?: Options): FetchResponse<T> => {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(false);

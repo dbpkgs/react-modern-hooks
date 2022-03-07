@@ -39,3 +39,10 @@ export type OSResponse = {
 export type OnlineResponse = {
   online: boolean;
 };
+
+export type FetchResponse<T> = {
+  data: T | null;
+  loading: boolean;
+  error: unknown;
+  refetch: () => void;
+};
