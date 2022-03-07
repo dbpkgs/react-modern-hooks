@@ -51,3 +51,12 @@ export type DeviceDetectResponse = {
   isMobile: boolean;
   device: string;
 };
+
+export interface NavigatorInformation extends Navigator {
+  mozConnection?: Navigator['connection'];
+  webkitConnection?: Navigator['connection'];
+}
+
+export type NetworkResponse = {
+  connection: NetworkInformation;
+};
