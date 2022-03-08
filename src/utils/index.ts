@@ -15,4 +15,4 @@ export const debounce = (callback: <T = any>(props: T) => any, delay: number) =>
 };
 
 export const regexURL =
-  /(\b((www\.)|((https?|http?|ftp|file):\/\/+?)(www\.)?)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+  /(\b((www\.)|((https?|http?|ftp|file):\/\/+?)(www\.)?)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?)/gi;
