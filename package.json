@@ -26,6 +26,7 @@
     "version": "yarn run format && git add -A src"
   },
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "axios": "^0.26.0",
     "parcel": "^2.3.2",

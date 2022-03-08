@@ -58,11 +58,13 @@ export interface NavigatorInformation extends Navigator {
 }
 
 export interface INetworkInformation extends NetworkInformation {
-  downlink: number | null;
-  effectiveType: string | null;
-  onchange: any;
-  rtt: number | null;
+  downlink: number;
+  downlinkMax: number;
+  effectiveType: string;
+  onchange: (e?: any) => void;
+  rtt: number;
   saveData: boolean;
+  type: ConnectionType;
 }
 
 export type NetworkResponse = {

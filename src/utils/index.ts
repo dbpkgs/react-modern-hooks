@@ -10,6 +10,6 @@ export const processImage = (buffer: ArrayBuffer, filename?: string) => {
 export const debounce = (callback: <T = any>(props: T) => any, delay: number) => {
   let _tId: number = 0;
   clearTimeout(_tId);
-
+  // @ts-expect-error ts-migrate(2322): FIXME: Type 'Timeout' is not assignable to type 'number'
   _tId = setTimeout(callback, delay);
 };
