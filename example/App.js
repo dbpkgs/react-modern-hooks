@@ -1,9 +1,10 @@
 import React from 'react';
-import Network from './Network';
-import Online from './Online';
-import hooks from '../src/hooks';
+//Testing both default and named imports
+import hooks, { useNetwork, useOnline } from '../src/hooks';
 
 const App = () => {
+  const { connection } = useNetwork();
+  const { online } = useOnline();
   const { data, error, processRequest } = hooks.useFetch('rrrr', {});
 
   console.log('data', data);
@@ -12,8 +13,15 @@ const App = () => {
     <div>
       <h1>Testing the hooks</h1>
       <button onClick={() => processRequest('https://jsonplaceholder')}>On Click</button>
-      <Network />
-      <Online />
+      <div>
+        <h2>useNetwork hook</h2>
+        Network {connection.downlink}
+      </div>
+
+      <div>
+        <h2>useOnline hook</h2>
+        Online - {JSON.stringify(online)}
+      </div>
     </div>
   );
 };
