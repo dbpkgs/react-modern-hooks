@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { DeviceDetectResponse } from '../types';
 
 /**
- * useDeviceDetect - Detect the device a users using if either mobile or not
+ * useDeviceDetect - Hook to detect the device a user is using and/or if either mobile or not
  *
  * @return {boolean} isMobile - Boolean resulting stating if the device is a mobile or not
  * @return {string} device - Name of the device being used

@@ -1,13 +1,45 @@
-export { default as useFetch } from './useFetch';
-export { default as useResize } from './useResize';
-export { default as useStorage } from './useStorage';
-export { default as useStateCallback } from './useStateCallback';
-export { default as useOs } from './useOs';
-export { default as useSearch } from './useSearch';
-export { default as usePageTitle } from './usePageTitle';
-export { default as useImageDownload } from './useImageDownload';
-export { default as useFocus } from './useFocus';
-export { default as useDebounce } from './useDebounce';
-export { default as useOnline } from './useOnline';
-export { default as useDeviceDetect } from './useDeviceDetect';
-export { default as useNetwork } from './useNetwork';
+import useFetch from './useFetch';
+import useResize from './useResize';
+import useStorage from './useStorage';
+import useStateCallback from './useStateCallback';
+import useOs from './useOs';
+import useSearch from './useSearch';
+import usePageTitle from './usePageTitle';
+import useImageDownload from './useImageDownload';
+import useFocus from './useFocus';
+import useDebounce from './useDebounce';
+import useOnline from './useOnline';
+import useDeviceDetect from './useDeviceDetect';
+import useNetwork from './useNetwork';
+
+export {
+  useFetch,
+  useResize,
+  useStorage,
+  useStateCallback,
+  useOs,
+  useSearch,
+  usePageTitle,
+  useImageDownload,
+  useFocus,
+  useDebounce,
+  useOnline,
+  useDeviceDetect,
+  useNetwork,
+};
+
+export default {
+  useFetch,
+  useResize,
+  useStorage,
+  useStateCallback,
+  useOs,
+  useSearch,
+  usePageTitle,
+  useImageDownload,
+  useFocus,
+  useDebounce,
+  useOnline,
+  useDeviceDetect,
+  useNetwork,
+};
