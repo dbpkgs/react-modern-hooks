@@ -4,9 +4,7 @@ import Online from './Online';
 import hooks from '../src/hooks';
 
 const App = () => {
-  const { data, error, processRequest } = hooks.useFetch('rrrr', {
-    method: 'DELETE',
-  });
+  const { data, error, processRequest } = hooks.useFetch('rrrr', {});
 
   console.log('data', data);
   console.log('error', error);

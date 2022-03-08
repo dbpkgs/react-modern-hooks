@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+/**
+ * useCopyToClipboard - Hook to copy text to clipboad
+ */
 const useCopyToClipboad = () => {
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [copied, setCopied] = useState<boolean>(false);
