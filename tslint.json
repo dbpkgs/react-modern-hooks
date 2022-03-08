@@ -1,3 +1,7 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"]
+  "defaultSeverity": "warn",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  }
 }
