@@ -13,3 +13,6 @@ export const debounce = (callback: <T = any>(props: T) => any, delay: number) =>
   // @ts-expect-error ts-migrate(2322): FIXME: Type 'Timeout' is not assignable to type 'number'
   _tId = setTimeout(callback, delay);
 };
+
+export const regexURL =
+  /(\b((www\.)|((https?|http?|ftp|file):\/\/+?)(www\.)?)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
