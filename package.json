@@ -14,7 +14,7 @@
     "check:type": "tsc --project tsconfig.json",
     "check:format": "prettier --check '**/*.{js,json,md,ts,yaml,yml}'  --ignore-path ./.prettierignore",
     "coverage": "TZ=pst yarn test --silent --env=jsdom --coverage --watchAll=false --testTimeout=9000",
-    "example": "npm run build && parcel './example/index.html'",
+    "example": "cd example/app && yarn start",
     "format": "prettier --write '**/*.{js,json,md,ts,yaml,yml}'",
     "prepare": "yarn build",
     "prepublishOnly": "yarn check:type && yarn lint && yarn test",
@@ -28,7 +28,6 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
-    "parcel": "^2.3.2",
     "prettier": "^2.5.1",
     "process": "^0.11.10",
     "react": "^17.0.2",
