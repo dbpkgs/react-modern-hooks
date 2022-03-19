@@ -9,6 +9,9 @@
     "strictNullChecks": true,
     "outDir": "./lib",
     "rootDir": "./src",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true

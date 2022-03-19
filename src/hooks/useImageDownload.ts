@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ImageDownloadResponse } from '../types';
-import { processImage } from '../utils';
+import { ImageDownloadResponse } from 'types';
+import { processImage } from 'utils';
 
 /**
  * useImageDownload - Hook to download images
@@ -22,7 +22,7 @@ const useImageDownload = (): ImageDownloadResponse => {
       headers: {},
     })
       .then((response) => {
-        response.arrayBuffer().then(processImage);
+        response.arrayBuffer().then((buffer) => processImage(buffer, filename));
       })
       .catch((err) => {
         setError(err);

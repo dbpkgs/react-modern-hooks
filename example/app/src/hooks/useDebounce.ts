@@ -16,6 +16,7 @@ const useDebounce = (callback: () => void, delay: number, dependencies?: Depende
     const timeoutId = setTimeout(callback, delay);
 
     return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [...dependencies, delay]);
 };
 

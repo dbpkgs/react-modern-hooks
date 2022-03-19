@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import useFetch from './useFetch';
 import useResize from './useResize';
 import useStorage from './useStorage';

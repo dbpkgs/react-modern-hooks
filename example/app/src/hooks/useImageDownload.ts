@@ -22,7 +22,7 @@ const useImageDownload = (): ImageDownloadResponse => {
       headers: {},
     })
       .then((response) => {
-        response.arrayBuffer().then(processImage);
+        response.arrayBuffer().then((buffer) => processImage(buffer, filename));
       })
       .catch((err) => {
         setError(err);

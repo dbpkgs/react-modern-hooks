@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { FocuResponse, MutableObjectRef } from '../types';
 
 /**
@@ -14,18 +14,18 @@ const useFocus = (ref: MutableObjectRef, autoFocus: boolean): FocuResponse => {
   const [inputRef] = useState<MutableObjectRef>(ref);
   const [state, setState] = useState<boolean>(autoFocus);
 
-  const setFocus = () => {
+  const setFocus = useCallback(() => {
     if (inputRef.current) {
       inputRef.current.focus();
       setState(true);
     }
-  };
+  }, [inputRef]);
 
   useEffect(() => {
     if (state) {
       setFocus();
     }
-  }, [state]);
+  }, [setFocus, state]);
 
   return {
     focused: state,

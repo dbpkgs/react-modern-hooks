@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { INetworkInformation, NavigatorInformation, NetworkResponse } from '../types';
 
 /**
@@ -13,15 +13,15 @@ const useNetwork = (): NetworkResponse => {
     navigate.connection || navigate.mozConnection || navigate.webkitConnection;
   const [connection, setConnection] = useState<INetworkInformation>(networkConnection);
 
-  const updateConnection = () => {
+  const updateConnection = useCallback(() => {
     setConnection(networkConnection);
-  };
+  }, [networkConnection]);
 
   useEffect(() => {
     connection.addEventListener('change', updateConnection);
 
     return () => connection.removeEventListener('change', updateConnection);
-  }, [connection]);
+  }, [connection, updateConnection]);
 
   return {
     connection,

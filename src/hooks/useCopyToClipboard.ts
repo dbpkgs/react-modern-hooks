@@ -10,6 +10,10 @@ const useCopyToClipboad = () => {
 
   const copyText = async (text: string): Promise<boolean> => {
     try {
+      const div = document.createElement('div');
+      div.innerHTML = text;
+      const textContent = div.textContent || div.innerHTML || div.innerText || '';
+
       if (!navigator || !navigator?.clipboard) {
         setCopied(false);
         setCopiedText(null);
@@ -17,15 +21,15 @@ const useCopyToClipboad = () => {
         return false;
       }
 
-      if (text.length) {
+      if (textContent.length) {
         setCopied(false);
         setCopiedText(null);
         setError(new Error('Unable to copy text of "undefined" to clipboard'));
         return false;
       }
 
-      await navigator?.clipboard.writeText(text);
-      setCopiedText(text);
+      await navigator?.clipboard.writeText(textContent);
+      setCopiedText(textContent);
       setCopied(true);
       setError(null);
 

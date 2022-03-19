@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { SearchResponse } from '../types';
+import { SearchResponse } from 'types';
 
 /**
  * @param {function} useSearch  - Hook to allow delayed search
@@ -28,7 +28,7 @@ const useSearch = <T>(initialState: T, timeout?: number): SearchResponse<T> => {
 
       return () => clearTimeout(timeOutId);
     }
-  }, [state]);
+  }, [state, timeout]);
 
   return [state, handleSetState];
 };

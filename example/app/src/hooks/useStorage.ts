@@ -35,9 +35,9 @@ const useStorage = ({ setStorageItem, storageKey }: UseStorageProps) => {
     if (storageItem) {
       setStorageItem(storageItem);
     }
-  }, [setStorageItem, storageKey]);
+  }, [getStoredItem, setStorageItem, storageKey]);
 
-  const removeStoredItem = useCallback((): void => localStorage.removeItem(storageKey), []);
+  const removeStoredItem = useCallback((): void => localStorage.removeItem(storageKey), [storageKey]);
 
   return {
     updateStorageItem,

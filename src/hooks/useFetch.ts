@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FetchResponse, FetchOptions } from '../types';
-import { regexURL } from '../utils';
+import { FetchResponse, FetchOptions } from 'types';
+import { regexURL } from 'utils';
 
 /**
  * useFetch - Hook for prefetching data from a API endpoint

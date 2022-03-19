@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { FetchResponse, FetchOptions } from '../types';
 import { regexURL } from '../utils';
 
@@ -20,32 +20,35 @@ const useFetch = <T = unknown>(url: string, options?: FetchOptions): FetchRespon
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const updateState = (_data: T | null, _error: unknown, _loading: boolean) => {
+  const updateState = useCallback((_data: T | null, _error: unknown, _loading: boolean) => {
     setError(_error);
     setData(_data);
     setLoading(_loading);
-  };
+  }, []);
 
-  const handleFetch = async (_url: string, _options?: FetchOptions): Promise<void> => {
-    try {
-      setLoading(true);
+  const handleFetch = useCallback(
+    async (_url: string, _options?: FetchOptions): Promise<void> => {
+      try {
+        setLoading(true);
 
-      const validURL = regexURL.test(_url);
-      if (_url.length <= 0 || !validURL) {
-        throw Error('Invalid url endpoint');
+        const validURL = regexURL.test(_url);
+        if (_url.length <= 0 || !validURL) {
+          throw Error('Invalid url endpoint');
+        }
+
+        const response = await fetch(_url, _options);
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+
+        const responseData: T = await response.json();
+        updateState(responseData, null, false);
+      } catch (err) {
+        updateState(null, err, false);
       }
-
-      const response = await fetch(_url, _options);
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-
-      const responseData: T = await response.json();
-      updateState(responseData, null, false);
-    } catch (err) {
-      updateState(null, err, false);
-    }
-  };
+    },
+    [updateState],
+  );
 
   const refetch = () => {
     if (!options || options.method?.toUpperCase() === 'GET') {
@@ -66,7 +69,7 @@ const useFetch = <T = unknown>(url: string, options?: FetchOptions): FetchRespon
     if (!options || options.method?.toUpperCase() === 'GET') {
       handleFetch(url, options);
     }
-  }, [url]);
+  }, [url, options, handleFetch]);
 
   return {
     data,

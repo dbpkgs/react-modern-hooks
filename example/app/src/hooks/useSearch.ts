@@ -28,7 +28,7 @@ const useSearch = <T>(initialState: T, timeout?: number): SearchResponse<T> => {
 
       return () => clearTimeout(timeOutId);
     }
-  }, [state]);
+  }, [state, timeout]);
 
   return [state, handleSetState];
 };
