@@ -155,3 +155,11 @@ export interface GeolocationResponse {
   error: unknown;
   loading: boolean;
 }
+
+export interface FullscreenResponse {
+  fullScreen: boolean;
+  open: () => Promise<void> | undefined;
+  close: () => Promise<void> | undefined;
+  toggle: () => Promise<void> | undefined;
+  error: string | null;
+}

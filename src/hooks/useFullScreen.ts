@@ -1,8 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Exit, MutableHTMLObjectRef } from 'types';
+import { Exit, FullscreenResponse, MutableHTMLObjectRef } from 'types';
 import { isFullScreenElement } from 'utils';
 
-const useFullScreen = (ref: MutableHTMLObjectRef, onExit?: Exit) => {
+/**
+ *
+ * useFullScreen - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
+ *
+ * @param {MutableHTMLObjectRef} ref - A HTMLElement ref object to toggle to fullscreen
+ * @param {Exit} onExit - A callback function to run when exiting fullscreen
+ *
+ * @returns {boolean} fullScreen - A boolean value to show if fullscreen or not
+ * @returns {Function} open - A function to open fullscreen window
+ * @returns {Function} close - A function to close/exit fullscreen window
+ * @returns {Function} toggle - A function to toggle from open fullscreen and close/exit fullscreen
+ * @returns {string|null} error - An error message incase something doesn't go right on opening/closing fullscreen
+ *
+ */
+const useFullScreen = (ref: MutableHTMLObjectRef, onExit?: Exit): FullscreenResponse => {
   const initialState: boolean = ref.current ? isFullScreenElement(ref.current) : false;
   const [fullScreen, setFullScreen] = useState<boolean>(initialState);
   const [error, setError] = useState<string | null>(null);
