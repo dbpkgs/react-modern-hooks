@@ -3,7 +3,8 @@ import { StateCallbackResponse } from 'types';
 
 /**
  * @param {function} useStateCallback  - Hook that acts as a state callback
- * Functionality borrowed from @param setState in class based functions
+ * Functionality borrowed from @param setState in class-based functions that provides a fallback
+ * with current set state
  *
  * @param {T} initialState  - is the initial state when setting the state which is of generic type T
  * @param {React.SetStateAction<T>} updatedState - is the updated state

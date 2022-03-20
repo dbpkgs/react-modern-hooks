@@ -18,6 +18,26 @@ or
 yarn add react-modern-hooks
 ```
 
+## Complete List of Available Hooks
+
+- `useFetch` - Hook for fetching/refetching data from an API endpoint
+- `useNetwork` - Hook for getting the network status
+- `useFullScreen` - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
+- `useGeolocation` - Hook to get a users current geographic location
+- `useSelectedText` - Hook to get the highlighted text on a page
+- `useCopyToClipboad` - Hook to copy text to clipboad
+- `useStateCallback` - Hook that acts as a state callback i.e. functionality same as react class-based setState that provides a fallback with your current set state
+- `useResize` - Hook to handle page resizing
+- `useSearch` - Hook to allow delayed search and only search after a user releases all keys for set timeout
+- `useImageDownload` - Hook that allows download of images from a given url
+- `useFocus` - Hook to autofocus input and/or textarea components
+- `useDebounce` - Hook to for delayed callback functions
+- `useStorage` - Hook to allow use of localstorage
+- `useOs` - Hook to get the current OS of the userAgent
+- `usePageTitle` - Hook to update the page title of a document url
+- `useOnline` - Hook to check if user is currently online or offline
+- `useDeviceDetect` - Hook to detect the device a user is using and/or if either mobile or not
+
 ## Usage
 
 ### useFetch

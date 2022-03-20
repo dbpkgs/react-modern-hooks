@@ -1,6 +1,6 @@
 {
   "name": "react-modern-hooks",
-  "private": false,
+  "private": true,
   "version": "1.0.2",
   "description": "A react modern hooks library for customized and reusable hooks",
   "main": "lib/index.js",

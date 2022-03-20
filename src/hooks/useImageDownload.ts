@@ -3,7 +3,7 @@ import { ImageDownloadResponse } from 'types';
 import { processImage } from 'utils';
 
 /**
- * useImageDownload - Hook to download images
+ * useImageDownload - Hook that allows download of images from a given url
  *
  * @returns {unknown} error - Error message returned during image download
  * @returns {boolean} loading - Loading state when image is still being downloaded
