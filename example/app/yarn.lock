@@ -7108,10 +7108,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-modern-hooks@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-modern-hooks/-/react-modern-hooks-1.0.0.tgz#8b847cb2a9bf687a06860fcc5212c6ad25b90307"
-  integrity sha512-6pO6nNZfh8q/BlpPZ/weUilmfloo2lAg0eD+0na1eTRl9o2dtn16dVperBM2xdcKrmMQmrT8davJRyIcwdJrJw==
+react-modern-hooks@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-modern-hooks/-/react-modern-hooks-1.0.1.tgz#7b2cbee1ec701fb3d98b72492473d67453819a7d"
+  integrity sha512-smNi7IxFvc8Vh9Txt3jS5X5SGTOUB4q0Hm8Ce2iZEgaQ5uIuD+RrmWff3oUJmmzZy7Y3IQR/mObFfT9hQTkSSw==
 
 react-refresh@^0.11.0:
   version "0.11.0"
