@@ -18,13 +18,13 @@ const Demo = () => {
 
 ### Input Variables
 
-`url` - The API endpoint to fetch data from
+`url` - The API endpoint to fetch data from <br/>
 `options` - optional parameters allowed to be passed when fetching data from an endpoint
 
 ### Output Variables
 
-`data` - returned data from the api endpoint
-`error` - Error response returned incase something goes wrong during data fetching
-`loading` - Loading state returned when data is still loading from the API endpoint
-`refetch` - Refetch function to refetch data
+`data` - returned data from the api endpoint<br/>
+`error` - Error response returned incase something goes wrong during data fetching<br/>
+`loading` - Loading state returned when data is still loading from the API endpoint<br/>
+`refetch` - Refetch function to refetch data<br/>
 `processRequest` - A helper function to process requests made via POST or PATCH or DELETE methods
