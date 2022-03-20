@@ -1,7 +1,7 @@
 {
   "name": "react-modern-hooks",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.0.1",
   "description": "A react modern hooks library for customized and reusable hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -28,7 +28,7 @@
     "start:example": "cd example/app && yarn start",
     "format": "prettier --write '**/*.{js,json,md,ts,yaml,yml}'",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn check:type && yarn lint && yarn test",
+    "prepublishOnly": "yarn check:type && yarn lint",
     "postversion": "git push && git push --tags",
     "lint": "tslint -p tsconfig.json",
     "lint:fix": "tslint -p tsconfig.json --quiet --fix",
