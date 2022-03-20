@@ -9,7 +9,7 @@ import { useFullScreen } from 'react-modern-hooks';
 
 const App = () => {
   const ref = useRef(null);
-  const { fullScreen, open, close, toggle, error } = useFullScreen();
+  const { fullScreen, open, close, toggle, error } = useFullScreen(ref);
 
   return (
     <div>

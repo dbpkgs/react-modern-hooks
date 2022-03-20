@@ -23,7 +23,7 @@ yarn add react-modern-hooks
 - [`useFetch`](./docs/useFetch.md) - Hook for fetching/refetching data from an API endpoint
 - [`useNetwork`](./docs/useNetwork.md) - Hook for getting the network status
 - [`useFullScreen`](./docs/useFullScreen.md) - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
-- `useGeolocation` - Hook to get a users current geographic location
+- [`useGeolocation`](./docs/useGeolocation.md) - Hook to get a users current geographic location
 - `useSelectedText` - Hook to get the highlighted text on a page
 - `useCopyToClipboad` - Hook to copy text to clipboad
 - `useStateCallback` - Hook that acts as a state callback i.e. functionality same as react class-based setState that provides a fallback with your current set state
@@ -77,7 +77,7 @@ import { useFullScreen } from 'react-modern-hooks';
 
 const App = () => {
   const ref = useRef(null);
-  const { fullScreen, open, close, toggle, error } = useFullScreen();
+  const { fullScreen, open, close, toggle, error } = useFullScreen(ref);
 
   return (
     <div>
@@ -88,5 +88,20 @@ const App = () => {
       </div>
     </div>
   );
+};
+```
+
+### useGeolocation
+
+Hook to get a users current geographic location
+
+```jsx
+import { useGeolocation } from 'react-modern-hooks';
+
+const App = () => {
+  const ref = useRef(null);
+  const { longitude, latitude, location, userIP, country, city, region, error, loading } = useGeolocation();
+
+  return <div>Current city: {city}</div>;
 };
 ```
