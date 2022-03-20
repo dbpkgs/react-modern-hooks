@@ -15,7 +15,10 @@
   },
   "keywords": [
     "react-modern-hooks",
-    "react-hooks"
+    "react-hooks",
+    "hooks",
+    "react",
+    "react-native"
   ],
   "scripts": {
     "build": "yarn lint && rimraf ./lib && tsc",
