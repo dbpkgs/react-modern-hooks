@@ -24,7 +24,7 @@ yarn add react-modern-hooks
 
 Hook for fetching/refetching data from an API endpoint
 
-```ts
+```jsx
 import { useFetch } from 'react-modern-hooks';
 
 const App = () => {
@@ -38,7 +38,7 @@ const App = () => {
 
 Hook for getting the network status
 
-```ts
+```jsx
 import { useNetwork } from 'react-modern-hooks';
 
 const App = () => {
@@ -52,7 +52,7 @@ const App = () => {
 
 Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
 
-```ts
+```jsx
 import { useFullScreen } from 'react-modern-hooks';
 
 const App = () => {
