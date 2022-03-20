@@ -5,10 +5,8 @@ import hooks, { useNetwork, useOnline } from '../src/hooks';
 const App = () => {
   const { connection } = useNetwork();
   const { online } = useOnline();
-  const { data, error, processRequest } = hooks.useFetch('rrrr', {});
+  const { processRequest } = hooks.useFetch('rrrr', {});
 
-  console.log('data', data);
-  console.log('error', error);
   return (
     <div>
       <h1>Testing the hooks</h1>
