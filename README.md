@@ -20,9 +20,9 @@ yarn add react-modern-hooks
 
 ## Complete List of Available Hooks
 
-- `[useFetch](./docs/useFetch.md)` - Hook for fetching/refetching data from an API endpoint
-- `[useNetwork](./docs/useNetwork.md)` - Hook for getting the network status
-- `[useFullScreen](./docs/useFullScreen.md)` - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
+- [`useFetch`](./docs/useFetch.md) - Hook for fetching/refetching data from an API endpoint
+- [`useNetwork`](./docs/useNetwork.md) - Hook for getting the network status
+- [`useFullScreen`](./docs/useFullScreen.md) - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
 - `useGeolocation` - Hook to get a users current geographic location
 - `useSelectedText` - Hook to get the highlighted text on a page
 - `useCopyToClipboad` - Hook to copy text to clipboad
