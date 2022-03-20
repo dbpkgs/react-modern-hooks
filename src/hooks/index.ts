@@ -1,16 +1,16 @@
-import useFetch from './useFetch';
-import useResize from './useResize';
-import useStorage from './useStorage';
-import useStateCallback from './useStateCallback';
-import useOs from './useOs';
-import useSearch from './useSearch';
-import usePageTitle from './usePageTitle';
-import useImageDownload from './useImageDownload';
-import useFocus from './useFocus';
-import useDebounce from './useDebounce';
-import useOnline from './useOnline';
-import useDeviceDetect from './useDeviceDetect';
-import useNetwork from './useNetwork';
+import useFetch from 'hooks/useFetch';
+import useResize from 'hooks/useResize';
+import useStorage from 'hooks/useStorage';
+import useStateCallback from 'hooks/useStateCallback';
+import useOs from 'hooks/useOs';
+import useSearch from 'hooks/useSearch';
+import usePageTitle from 'hooks/usePageTitle';
+import useImageDownload from 'hooks/useImageDownload';
+import useFocus from 'hooks/useFocus';
+import useDebounce from 'hooks/useDebounce';
+import useOnline from 'hooks/useOnline';
+import useDeviceDetect from 'hooks/useDeviceDetect';
+import useNetwork from 'hooks/useNetwork';
 
 export {
   useFetch,

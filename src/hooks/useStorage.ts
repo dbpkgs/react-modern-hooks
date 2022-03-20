@@ -1,9 +1,5 @@
 import { useCallback, useEffect } from 'react';
-
-type UseStorageProps<T = any> = {
-  setStorageItem: React.SetStateAction<T>;
-  storageKey: string;
-};
+import { StorageProps, StorageResponse } from 'types';
 
 /**
  * useStorage - Hook to allow use of localstorage
@@ -16,7 +12,7 @@ type UseStorageProps<T = any> = {
  * @returns {Function} removeStoredItem - Function to remove stored item from localstorage
  *
  */
-const useStorage = ({ setStorageItem, storageKey }: UseStorageProps) => {
+const useStorage = ({ setStorageItem, storageKey }: StorageProps): StorageResponse => {
   const updateStorageItem = useCallback(
     <T = any>(storageItem: T) => {
       localStorage.setItem(storageKey, JSON.stringify(storageItem));
@@ -35,9 +31,9 @@ const useStorage = ({ setStorageItem, storageKey }: UseStorageProps) => {
     if (storageItem) {
       setStorageItem(storageItem);
     }
-  }, [setStorageItem, storageKey]);
+  }, [getStoredItem, setStorageItem, storageKey]);
 
-  const removeStoredItem = useCallback((): void => localStorage.removeItem(storageKey), []);
+  const removeStoredItem = useCallback((): void => localStorage.removeItem(storageKey), [storageKey]);
 
   return {
     updateStorageItem,

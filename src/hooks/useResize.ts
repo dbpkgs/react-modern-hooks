@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ResizeResponse } from '../types';
-import { debounce } from '../utils';
+import { ResizeResponse } from 'types';
+import { debounce } from 'utils';
 
 /**
  * useResize - Hook to handle page resizing

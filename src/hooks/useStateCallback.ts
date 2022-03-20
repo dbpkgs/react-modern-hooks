@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { StateCallbackResponse } from '../types';
+import { StateCallbackResponse } from 'types';
 
 /**
  * @param {function} useStateCallback  - Hook that acts as a state callback

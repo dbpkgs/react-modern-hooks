@@ -16,3 +16,25 @@ export const debounce = (callback: <T = any>(props: T) => any, delay: number) =>
 
 export const regexURL =
   /(\b((www\.)|((https?|http?|ftp|file):\/\/+?)(www\.)?)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?)/gi;
+
+export const isFullScreenElement = (el: Element): boolean => {
+  if (el) {
+    return Boolean(
+      document.fullscreenElement === el ||
+        document.mozFullScreenElement === el ||
+        document.webkitFullscreenElement === el ||
+        document.msFullscreenElement === el,
+    );
+  }
+
+  return Boolean(
+    document.fullscreenElement ||
+      document.mozFullScreenElement ||
+      document.webkitFullscreenElement ||
+      document.msFullscreenElement ||
+      document.fullscreen ||
+      document.mozFullScreen ||
+      document.webkitIsFullScreen ||
+      document.fullScreenMode,
+  );
+};
