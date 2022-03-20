@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GeoLocationFetchResponse, GeolocationResponse } from 'types';
-import useFetch from 'hooks/useFetch';
+import { useFetch } from 'hooks';
 
 /**
  * useGeolocation - Hook to get a users current geographic location
