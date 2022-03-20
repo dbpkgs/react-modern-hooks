@@ -1,12 +1,11 @@
 import React from 'react';
 //Testing both default and named imports
-import hooks from 'react-modern-hooks';
+import hooks, { useNetwork, useOnline } from 'react-modern-hooks';
 
 const App: React.FC<{}> = (): JSX.Element => {
-  const { useNetwork, useOnline } = hooks.hooks;
   const { connection } = useNetwork();
   const { online } = useOnline();
-  const { data, error, processRequest } = hooks.hooks.useFetch('rrrr', {});
+  const { data, error, processRequest } = hooks.useFetch('rrrr', {});
 
   console.log('data', data);
   console.log('error', error);
