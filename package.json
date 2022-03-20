@@ -8,7 +8,7 @@
   "author": "dbpkgs",
   "license": "MIT",
   "files": [
-    "lib/"
+    "lib/**/*"
   ],
   "engines": {
     "node": ">=12"
