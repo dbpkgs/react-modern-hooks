@@ -10,6 +10,9 @@
   "files": [
     "lib/**/*"
   ],
+  "bugs": {
+    "url": "https://github.com/dbpkgs/react-modern-hooks/issues"
+  },
   "engines": {
     "node": ">=12"
   },
