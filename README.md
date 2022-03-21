@@ -38,11 +38,11 @@ yarn add react-modern-hooks
 - `useOnline` - Hook to check if user is currently online or offline
 - `useDeviceDetect` - Hook to detect the device a user is using and/or if either mobile or not
 
-## useFetch
+# useFetch
 
 Hook for fetching/refetching data from an API endpoint
 
-### Usage
+#### Usage
 
 ```jsx
 import { useFetch } from 'react-modern-hooks';
@@ -54,14 +54,14 @@ const App = () => {
 };
 ```
 
-### Reference
+#### Reference
 
-#### Input Variables
+##### Input Variables
 
 `url` - The API endpoint to fetch data from <br/>
 `options` - optional parameters allowed to be passed when fetching data from an endpoint
 
-#### Output Variables
+##### Output Variables
 
 `data` - returned data from the api endpoint<br/>
 `error` - Error response returned incase something goes wrong during data fetching<br/>
@@ -69,7 +69,7 @@ const App = () => {
 `refetch` - Refetch function to refetch data<br/>
 `processRequest` - A helper function to process requests made via POST or PATCH or DELETE methods
 
-## useNetwork
+# useNetwork
 
 Hook for getting the network status
 
@@ -83,7 +83,7 @@ const App = () => {
 };
 ```
 
-## useFullScreen
+# useFullScreen
 
 Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
 
@@ -106,7 +106,7 @@ const App = () => {
 };
 ```
 
-## useGeolocation
+# useGeolocation
 
 Hook to get a users current geographic location
 
