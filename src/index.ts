@@ -13,7 +13,7 @@ import useDeviceDetect from './hooks/useDeviceDetect';
 import useNetwork from './hooks/useNetwork';
 import useFullScreen from './hooks/useFullScreen';
 import useGeolocation from './hooks/useGeolocation';
-import useCopyToClipboad from './hooks/useCopyToClipboard';
+import useCopyToClipboard from './hooks/useCopyToClipboard';
 import useOnClickOutside from './hooks/useOnClickOutside';
 import useSelectedText from './hooks/useSelectedText';
 
@@ -35,7 +35,7 @@ export {
   useGeolocation,
   useOnClickOutside,
   useSelectedText,
-  useCopyToClipboad,
+  useCopyToClipboard,
 };
 
 export default {
@@ -56,5 +56,5 @@ export default {
   useGeolocation,
   useOnClickOutside,
   useSelectedText,
-  useCopyToClipboad,
+  useCopyToClipboard,
 };

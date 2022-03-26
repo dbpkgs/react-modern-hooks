@@ -163,3 +163,10 @@ export interface FullscreenResponse {
   toggle: () => Promise<void> | undefined;
   error: string | null;
 }
+
+export interface CopyToClipboardResponse {
+  error: string | Error | null;
+  copied: boolean;
+  copiedText: string | null;
+  copyText: (text: string) => Promise<boolean>;
+}

@@ -1,9 +1,17 @@
 import { useState } from 'react';
+import { CopyToClipboardResponse } from '../types';
 
 /**
  * useCopyToClipboard - Hook to copy text to clipboad
+ *
+ * @returns {Error|string|null} error - Error message that occured during copy
+ * @returns {boolean}  copied - Boolean state if the text was copied successfully
+ * @returns  {string|null} copiedText - The copied text
+ * @returns {(text: string) => Promise<boolean>} copyText  - A function to copy the text
+ *
  */
-const useCopyToClipboad = () => {
+
+const useCopyToClipboard = (): CopyToClipboardResponse => {
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [copied, setCopied] = useState<boolean>(false);
   const [error, setError] = useState<string | Error | null>(null);
@@ -21,7 +29,7 @@ const useCopyToClipboad = () => {
         return false;
       }
 
-      if (textContent.length) {
+      if (!textContent.length) {
         setCopied(false);
         setCopiedText(null);
         setError(new Error('Unable to copy text of "undefined" to clipboard'));
@@ -50,4 +58,4 @@ const useCopyToClipboad = () => {
   };
 };
 
-export default useCopyToClipboad;
+export default useCopyToClipboard;
