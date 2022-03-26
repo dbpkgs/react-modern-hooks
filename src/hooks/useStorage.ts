@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { StorageProps, StorageResponse } from 'types';
+import { StorageProps, StorageResponse } from '../types';
 
 /**
  * useStorage - Hook to allow use of localstorage

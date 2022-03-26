@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { OnlineResponse } from 'types';
+import { OnlineResponse } from '../types';
 
 /**
  * useOnline - Hook to check if user is currently online or offline

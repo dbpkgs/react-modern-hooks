@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DeviceDetectResponse } from 'types';
+import { DeviceDetectResponse } from '../types';
 
 /**
  * useDeviceDetect - Hook to detect the device a user is using and/or if either mobile or not

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { OS, OSResponse } from 'types';
+import { OS, OSResponse } from '../types';
 
 /**
  * useOs - Hook to get the current OS of the userAgent

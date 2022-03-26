@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Exit, FullscreenResponse, MutableHTMLObjectRef } from 'types';
-import { isFullScreenElement } from 'utils';
+import { Exit, FullscreenResponse, MutableHTMLObjectRef } from '../types';
+import { isFullScreenElement } from '../utils';
 
 /**
  *

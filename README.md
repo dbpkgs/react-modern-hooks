@@ -18,25 +18,29 @@ or
 yarn add react-modern-hooks
 ```
 
+## Issues
+
+Having issues setting up or using this hooks library, file a bug report [here](https://rmh.vercel.app/github/issues/new)
+
 ## Complete List of Available Hooks
 
-- [`useFetch`](#useFetch) - Hook for fetching/refetching data from an API endpoint
-- [`useNetwork`](#useNetwork) - Hook for getting the network status
-- [`useFullScreen`](#useFullScreen) - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
-- [`useGeolocation`](#useGeolocation) - Hook to get a users current geographic location
-- `useSelectedText` - Hook to get the highlighted text on a page
-- `useCopyToClipboad` - Hook to copy text to clipboad
-- `useStateCallback` - Hook that acts as a state callback i.e. functionality same as react class-based setState that provides a fallback with your current set state
-- `useResize` - Hook to handle page resizing
-- `useSearch` - Hook to allow delayed search and only search after a user releases all keys for set timeout
-- `useImageDownload` - Hook that allows download of images from a given url
-- `useFocus` - Hook to autofocus input and/or textarea components
-- `useDebounce` - Hook to for delayed callback functions
-- `useStorage` - Hook to allow use of localstorage
-- `useOs` - Hook to get the current OS of the userAgent
-- `usePageTitle` - Hook to update the page title of a document url
-- `useOnline` - Hook to check if user is currently online or offline
-- `useDeviceDetect` - Hook to detect the device a user is using and/or if either mobile or not
+- [`useFetch`](https://rmh.vercel.app/docs/usefetch) - Hook for fetching/refetching data from an API endpoint
+- [`useNetwork`](https://rmh.vercel.app/docs/usenetwork) - Hook for getting the network status
+- [`useFullScreen`](https://rmh.vercel.app/docs/usefullscreen) - Hook to toggle a given HTMLElement to fullscreen and exit fullscreen
+- [`useGeolocation`](https://rmh.vercel.app/docs/usegeolocation) - Hook to get a users current geographic location
+- [`useSelectedText`](https://rmh.vercel.app/docs/useselectedtext) - Hook to get the highlighted text on a page
+- [`useCopyToClipboad`](https://rmh.vercel.app/docs/usecopytoclipboard) - Hook to copy text to clipboad
+- [`useStateCallback`](https://rmh.vercel.app/docs/usestatecallback) - Hook that acts as a state callback i.e. functionality same as react class-based setState that provides a fallback with your current set state
+- [`useResize`](https://rmh.vercel.app/docs/useresize) - Hook to handle page resizing
+- [`useSearch`](https://rmh.vercel.app/docs/usesearch) - Hook to allow delayed search and only search after a user releases all keys for set timeout
+- [`useImageDownload`](https://rmh.vercel.app/docs/useimagedownload) - Hook that allows download of images from a given url
+- [`useFocus`](https://rmh.vercel.app/docs/usefocus) - Hook to autofocus input and/or textarea components
+- [`useDebounce`](https://rmh.vercel.app/docs/usedebounce) - Hook to for delayed callback functions
+- [`useStorage`](https://rmh.vercel.app/docs/usestorage) - Hook to allow use of localstorage
+- [`useOs`](https://rmh.vercel.app/docs/useos) - Hook to get the current OS of the userAgent
+- [`usePageTitle`](https://rmh.vercel.app/docs/usepagetitle) - Hook to update the page title of a document url
+- [`useOnline`](https://rmh.vercel.app/docs/useonline) - Hook to check if user is currently online or offline
+- [`useDeviceDetect`](https://rmh.vercel.app/docs/usedevicedetect) - Hook to detect the device a user is using and/or if either mobile or not
 
 # useFetch
 

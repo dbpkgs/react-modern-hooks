@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { SearchResponse } from 'types';
+import { SearchResponse } from '../types';
 
 /**
  * @param {function} useSearch  - Hook to allow delayed search

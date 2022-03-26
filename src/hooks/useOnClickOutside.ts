@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Handler, MutableHTMLObjectRef } from 'types';
+import { Handler, MutableHTMLObjectRef } from '../types';
 
 /**
  *

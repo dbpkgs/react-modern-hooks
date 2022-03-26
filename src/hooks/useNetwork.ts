@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { INetworkInformation, NavigatorInformation, NetworkResponse } from 'types';
+import { INetworkInformation, NavigatorInformation, NetworkResponse } from '../types';
 
 /**
  * useNetwork - Hook for getting the network status

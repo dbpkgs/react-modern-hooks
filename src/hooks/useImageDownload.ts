@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ImageDownloadResponse } from 'types';
-import { processImage } from 'utils';
+import { ImageDownloadResponse } from '../types';
+import { processImage } from '../utils';
 
 /**
  * useImageDownload - Hook that allows download of images from a given url

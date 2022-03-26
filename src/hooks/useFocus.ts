@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { FocuResponse, MutableObjectRef } from 'types';
+import { FocuResponse, MutableObjectRef } from '../types';
 
 /**
  * useFocus - Hook to autofocus input and/or textarea components

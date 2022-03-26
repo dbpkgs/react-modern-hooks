@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SelectedTextResponse } from 'types';
+import { SelectedTextResponse } from '../types';
 
 /**
  * useSelectedText - Hook to get the highlighted text on a page
