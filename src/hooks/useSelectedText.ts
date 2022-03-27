@@ -12,8 +12,8 @@ import { SelectedTextResponse } from '../types';
 const useSelectedText = (): SelectedTextResponse => {
   const [selectedText, setSelectedText] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);
-  let text = useRef<Selection | string | null>('');
-  let err = useRef<Error | null>(null);
+  const text = useRef<Selection | string | null>('');
+  const err = useRef<Error | null>(null);
 
   const getSelectedText = useCallback(() => {
     try {
