@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { SelectedTextResponse } from '../types';
 
 /**
@@ -10,30 +10,36 @@ import { SelectedTextResponse } from '../types';
  *
  */
 const useSelectedText = (): SelectedTextResponse => {
-  const [selectedText, setSelectedText] = useState<Selection | string | null>(null);
+  const [selectedText, setSelectedText] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);
-  let text: Selection | string | null = '';
-  let err: Error | null = null;
+  let text = useRef<Selection | string | null>('');
+  let err = useRef<Error | null>(null);
 
-  const getSelectedText = () => {
+  const getSelectedText = useCallback(() => {
     try {
       if (window.getSelection) {
-        text = window.getSelection();
-        err = null;
+        text.current = window.getSelection();
+        err.current = null;
       } else if (window.document.getSelection) {
-        text = window.document.getSelection();
-        err = null;
+        text.current = window.document.getSelection();
+        err.current = null;
       } else {
-        err = new Error('Your browser does not support text selection!');
+        err.current = new Error('Your browser does not support text selection!');
       }
 
-      setError(err);
-      setSelectedText(text);
+      setError(err.current);
+      setSelectedText(text.current?.toString() ?? null);
     } catch (err: any) {
       setError(err);
       setSelectedText(null);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mouseup', getSelectedText);
+    }
+  }, [getSelectedText]);
 
   return {
     error,

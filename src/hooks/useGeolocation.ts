@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { GeoLocationFetchResponse, GeolocationResponse } from '../types';
+import { GeoLocationFetchResponse, GeolocationResponse, Location } from '../types';
 import useFetch from '../hooks/useFetch';
 
 /**
@@ -16,7 +16,7 @@ import useFetch from '../hooks/useFetch';
  * @returns {boolean} loading - Loading state when users location is still being fetched
  */
 const useGeolocation = (): GeolocationResponse => {
-  const [location, setLocation] = useState<GeoLocationFetchResponse | null>(null);
+  const [location, setLocation] = useState<Location | null>(null);
   const [userIP, setUserIP] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [region, setRegion] = useState<string>('');
@@ -28,13 +28,22 @@ const useGeolocation = (): GeolocationResponse => {
 
   useEffect(() => {
     if (!loading && data) {
-      setLocation(data ?? null);
-      setUserIP(data.ip ?? '');
-      setCity(data.city ?? '');
-      setRegion(data.region ?? '');
-      setLongitude(data.longitude ?? null);
-      setLatitude(data.latitude ?? null);
-      setCountry(data.country ?? '');
+      const {
+        ip: dIP,
+        city: dCity,
+        region: dRegion,
+        longitude: dLongitude,
+        latitude: dLatitude,
+        country: dCountry,
+        ...restData
+      } = data;
+      setLocation(restData ?? null);
+      setUserIP(dIP ?? '');
+      setCity(dCity ?? '');
+      setRegion(dRegion ?? '');
+      setLongitude(dLongitude ?? null);
+      setLatitude(dLatitude ?? null);
+      setCountry(dCountry ?? '');
     }
   }, [data, loading]);
 

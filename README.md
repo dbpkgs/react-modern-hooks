@@ -1,7 +1,7 @@
-# React Modern Hooks
+# [React Modern Hooks](https://rmh.vercel.app)
 
-A react modern hooks library for customized and reusable hooks.
-These hooks in this library depends on react library under the hood.
+React modern hooks is a library for customized and reusable hooks.
+These hooks depend on react library under the hood.
 
 _`Disclaimer: ` atleast react version 16.8 is required for the hooks_
 
@@ -22,6 +22,10 @@ yarn add react-modern-hooks
 
 Having issues setting up or using this hooks library, file a bug report [here](https://rmh.vercel.app/github/issues/new)
 
+## Documentation
+
+You can find the complete React Modern Hooks documentation [on the website](https://rmh.vercel.app)
+
 ## Complete List of Available Hooks
 
 - [`useFetch`](https://rmh.vercel.app/docs/usefetch) - Hook for fetching/refetching data from an API endpoint
@@ -41,6 +45,10 @@ Having issues setting up or using this hooks library, file a bug report [here](h
 - [`usePageTitle`](https://rmh.vercel.app/docs/usepagetitle) - Hook to update the page title of a document url
 - [`useOnline`](https://rmh.vercel.app/docs/useonline) - Hook to check if user is currently online or offline
 - [`useDeviceDetect`](https://rmh.vercel.app/docs/usedevicedetect) - Hook to detect the device a user is using and/or if either mobile or not
+
+# Examples
+
+We have several examples and complete guide [on the website](https://rmh.vercel.app). Here are a few to get you started:
 
 # useFetch
 

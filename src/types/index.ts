@@ -144,10 +144,13 @@ export interface GeoLocationFetchResponse {
   org?: string | null;
 }
 
+export interface Location
+  extends Omit<GeoLocationFetchResponse, 'ip' | 'city' | 'region' | 'country' | 'longitude' | 'latitude'> {}
+
 export interface GeolocationResponse {
   longitude: number | null;
   latitude: number | null;
-  location: GeoLocationFetchResponse | null;
+  location: Location | null;
   userIP: string;
   country: string;
   city: string;
