@@ -5,6 +5,7 @@ node_modules
 /lib
 /dist
 .parcel-cache
+yarn-error.log
 
 #coverage
 coverage

@@ -7,14 +7,15 @@ export const processImage = (buffer: ArrayBuffer, filename?: string) => {
   link.click();
 };
 
-export const debounce = (callback: <T = any>(props: T) => any, delay: number) => {
-  let _tId: number = 0;
+export const debounce = (callback: <T = never>(props: T) => unknown, delay: number) => {
+  let _tId = 0;
   clearTimeout(_tId);
   // @ts-expect-error ts-migrate(2322): FIXME: Type 'Timeout' is not assignable to type 'number'
   _tId = setTimeout(callback, delay);
 };
 
 export const regexURL =
+  // eslint-disable-next-line no-useless-escape
   /(\b((www\.)|((https?|http?|ftp|file):\/\/+?)(www\.)?)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?)/gi;
 
 export const isFullScreenElement = (el: Element): boolean => {

@@ -42,6 +42,7 @@ const useCopyToClipboard = (): CopyToClipboardResponse => {
       setError(null);
 
       return true;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setCopiedText(null);
       setCopied(false);

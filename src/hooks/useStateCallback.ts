@@ -11,7 +11,7 @@ import { StateCallbackResponse } from '../types';
  * @returns {Array} - returns state, handleState in an array where the state is the resolved state while
  * handle state is the result of the callback
  */
-const useStateCallback = <T>(initialState: T): StateCallbackResponse<T> => {
+const useStateCallback = <T = undefined>(initialState: T): StateCallbackResponse<T> => {
   const [state, setState] = useState<T>(initialState);
   const callbackRef = useRef<(updated: T) => void>();
 

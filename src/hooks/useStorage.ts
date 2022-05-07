@@ -14,15 +14,16 @@ import { StorageProps, StorageResponse } from '../types';
  */
 const useStorage = ({ setStorageItem, storageKey }: StorageProps): StorageResponse => {
   const updateStorageItem = useCallback(
-    <T = any>(storageItem: T) => {
+    <T = never>(storageItem: T) => {
       localStorage.setItem(storageKey, JSON.stringify(storageItem));
+      // @ts-expect-error (2345) FIXME: (parameter) storageItem: T = never Argument of type 'T' is not assignable to parameter of type 'never'
       setStorageItem(storageItem);
     },
     [setStorageItem, storageKey],
   );
 
   const getStoredItem = useCallback(
-    <T = any>(): T | null | undefined => JSON.parse(localStorage.getItem(storageKey) as string),
+    <T = never>(): T | null | undefined => JSON.parse(localStorage.getItem(storageKey) as string),
     [storageKey],
   );
 

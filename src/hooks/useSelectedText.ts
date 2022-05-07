@@ -29,6 +29,7 @@ const useSelectedText = (): SelectedTextResponse => {
 
       setError(err.current);
       setSelectedText(text.current?.toString() ?? null);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err);
       setSelectedText(null);

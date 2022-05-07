@@ -40,14 +40,14 @@ export type SearchResponse<T> = CommonStateResponse<T>;
 
 export type StateCallbackResponse<T> = CommonStateResponse<T>;
 
-export interface StorageProps<T = any> {
+export interface StorageProps<T = never> {
   setStorageItem: React.SetStateAction<T>;
   storageKey: string;
 }
 
 export interface StorageResponse {
-  updateStorageItem: <T = any>(storageItem: T) => void;
-  getStoredItem: <T = any>() => T | null | undefined;
+  updateStorageItem: <T = never>(storageItem: T) => void;
+  getStoredItem: <T = never>() => T | null | undefined;
   removeStoredItem: () => void;
 }
 
@@ -97,7 +97,7 @@ export interface INetworkInformation extends NetworkInformation {
   downlink: number;
   downlinkMax: number;
   effectiveType: string;
-  onchange: (e?: any) => void;
+  onchange: (e?: unknown) => void;
   rtt: number;
   saveData: boolean;
   type: ConnectionType;
@@ -144,8 +144,7 @@ export interface GeoLocationFetchResponse {
   org?: string | null;
 }
 
-export interface Location
-  extends Omit<GeoLocationFetchResponse, 'ip' | 'city' | 'region' | 'country' | 'longitude' | 'latitude'> {}
+export type Location = Omit<GeoLocationFetchResponse, 'ip' | 'city' | 'region' | 'country' | 'longitude' | 'latitude'>;
 
 export interface GeolocationResponse {
   longitude: number | null;
