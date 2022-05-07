@@ -25,12 +25,6 @@
     "eject": "react-scripts eject",
     "create:sym": "ts-node './src/createSym.ts'"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
