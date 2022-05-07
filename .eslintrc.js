@@ -28,4 +28,7 @@ module.exports = {
       flowVersion: '0.53', // Flow version
     },
   },
+  rules: {
+    '@typescript-eslint/ban-types': 'off',
+  },
 };
