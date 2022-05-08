@@ -14,20 +14,28 @@ const useImageDownload = (): ImageDownloadResponse => {
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const downloadImage = (imgUrl: string) => {
-    const filename = imgUrl.split('/').pop();
+  const downloadImage = (imageSrc: string) => {
     setLoading(true);
-    fetch(imgUrl, {
+    const filename = imageSrc.split('/').pop();
+
+    fetch(imageSrc, {
       method: 'GET',
-      headers: {},
+      mode: 'no-cors',
+      headers: {
+        'Cross-Origin': 'Anonymous',
+        'cache-control': 'no-cache',
+      },
     })
-      .then((response) => {
-        response.arrayBuffer().then((buffer) => processImage(buffer, filename));
+      .then((res) => res.blob())
+      .then((blob) => {
+        processImage(blob, filename);
       })
       .catch((err) => {
         setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-    setLoading(false);
   };
 
   return {

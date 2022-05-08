@@ -1,10 +1,11 @@
-export const processImage = (buffer: ArrayBuffer, filename?: string) => {
-  const url = window.URL.createObjectURL(new Blob([buffer]));
+export const processImage = (blob: Blob, filename?: string) => {
   const link = document.createElement('a');
-  link.href = url;
-  link.setAttribute('download', `${filename}`);
-  document.body.appendChild(link);
+  document.documentElement.append(link);
+  const objectURL = URL.createObjectURL(blob);
+  link.setAttribute('download', filename ?? '');
+  link.href = objectURL;
   link.click();
+  link.remove();
 };
 
 export const debounce = (callback: <T = never>(props: T) => unknown, delay: number) => {

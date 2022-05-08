@@ -12,20 +12,20 @@ const useResize = (): ResizeResponse => {
   const [width, setWidth] = useState<number>(1440);
   const [height, setHeight] = useState<number>(960);
 
+  const handleResize = () => {
+    const { innerWidth, innerHeight } = window;
+    setWidth(innerWidth);
+    setHeight(innerHeight);
+  };
+
+  const handleDebouncedResize = useCallback(() => {
+    debounce(handleResize, 1000);
+  }, [debounce, handleResize]);
+
   useEffect(() => {
-    const handleResize = () => {
-      const { innerWidth, innerHeight } = window;
-      setWidth(innerWidth);
-      setHeight(innerHeight);
-    };
-
-    const handleDebouncedResize = useCallback(() => {
-      debounce(handleResize, 1000);
-    }, []);
-
     window.addEventListener('resize', handleDebouncedResize);
     return () => window.removeEventListener('resize', handleDebouncedResize);
-  }, []);
+  }, [handleDebouncedResize]);
 
   return {
     width,
