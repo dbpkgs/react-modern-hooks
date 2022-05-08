@@ -40,14 +40,16 @@ export type SearchResponse<T> = CommonStateResponse<T>;
 
 export type StateCallbackResponse<T> = CommonStateResponse<T>;
 
-export interface StorageProps<T = never> {
-  setStorageItem: React.SetStateAction<T>;
+export type StorageItem<S = never> = React.SetStateAction<S>;
+
+export interface StorageProps<T> {
+  setStorageItem: React.Dispatch<StorageItem<T>>;
   storageKey: string;
 }
 
-export interface StorageResponse {
-  updateStorageItem: <T = never>(storageItem: T) => void;
-  getStoredItem: <T = never>() => T | null | undefined;
+export interface StorageResponse<S> {
+  updateStorageItem: <T extends StorageItem<S>>(storageItem: T) => void;
+  getStoredItem: <T extends StorageItem<S>>() => T | null | undefined;
   removeStoredItem: () => void;
 }
 
