@@ -30,8 +30,10 @@ const useImageDownload = (): ImageDownloadResponse => {
       })
       .catch((err) => {
         setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-    setLoading(false);
   };
 
   return {
