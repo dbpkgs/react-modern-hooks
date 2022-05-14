@@ -1,7 +1,7 @@
 {
   "name": "react-modern-hooks",
   "private": false,
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A react modern hooks library for customized and reusable hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -11,7 +11,11 @@
     "lib/**/*"
   ],
   "bugs": {
-    "url": "https://rmh.vercel.app/github/issues"
+    "url": "https://github.com/dbpkgs/react-modern-hooks/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbpkgs/react-modern-hooks"
   },
   "homepage": "https://rmh.vercel.app",
   "engines": {
