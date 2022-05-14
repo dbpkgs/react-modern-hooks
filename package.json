@@ -11,7 +11,11 @@
     "lib/**/*"
   ],
   "bugs": {
-    "url": "https://rmh.vercel.app/github/issues"
+    "url": "https://github.com/dbpkgs/react-modern-hooks/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbpkgs/react-modern-hooks"
   },
   "homepage": "https://rmh.vercel.app",
   "engines": {
