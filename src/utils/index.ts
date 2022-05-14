@@ -1,9 +1,9 @@
-export const processImage = (blob: Blob, filename?: string) => {
+export const processImage = (buffer: ArrayBuffer, filename?: string) => {
+  const url = window.URL.createObjectURL(new Blob([buffer]));
   const link = document.createElement('a');
-  document.documentElement.append(link);
-  const objectURL = URL.createObjectURL(blob);
-  link.setAttribute('download', filename ?? '');
-  link.href = objectURL;
+  link.href = url;
+  link.setAttribute('download', `${filename}`);
+  document.body.appendChild(link);
   link.click();
   link.remove();
 };
