@@ -1,5 +1,7 @@
 # [React Modern Hooks](https://rmh.vercel.app)
 
+[![Cookie Action Status](https://github.com/dbpkgs/cookie/workflows/npm-publish/badge.svg)](https://github.com/dbpkgs/react-modern-hooks/actions) [![Downloads Action Status](https://img.shields.io/npm/dt/react-modern-hooks.svg)](https://www.npmjs.com/package/react-modern-hooks)
+
 React modern hooks is a library for customized and reusable hooks.
 These hooks depend on react library under the hood.
 
